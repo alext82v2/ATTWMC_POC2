@@ -1,0 +1,99 @@
+.dashboard-page {
+  min-height: calc(100vh - 60px);
+  padding: 20px;
+  background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 100%);
+}
+
+.dashboard-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.welcome-text {
+  color: white;
+  font-size: 1.3rem;
+  text-align: center;
+  margin: 20px 0 30px;
+  font-weight: 500;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.menu-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: left;
+}
+
+.menu-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--card-color);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.menu-icon {
+  font-size: 2.5rem;
+  min-width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+}
+
+.menu-content {
+  flex: 1;
+}
+
+.menu-content h3 {
+  color: white;
+  font-size: 1.1rem;
+  margin: 0 0 5px;
+}
+
+.menu-content p {
+  color: #718096;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.menu-arrow {
+  color: var(--card-color);
+  font-size: 1.5rem;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.menu-card:hover .menu-arrow {
+  opacity: 1;
+  transform: translateX(5px);
+}
+
+@media (max-width: 600px) {
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .menu-card {
+    padding: 16px;
+  }
+  
+  .menu-icon {
+    font-size: 2rem;
+    min-width: 50px;
+    height: 50px;
+  }
+}
