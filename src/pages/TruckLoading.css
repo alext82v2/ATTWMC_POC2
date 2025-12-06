@@ -1,0 +1,567 @@
+.truck-loading-page {
+  min-height: calc(100vh - 60px);
+  padding: 20px;
+  background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 100%);
+}
+
+.truck-loading-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.message {
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.message.success {
+  background: rgba(34, 197, 94, 0.2);
+  border: 1px solid #22c55e;
+  color: #86efac;
+}
+
+.message.error {
+  background: rgba(239, 68, 68, 0.2);
+  border: 1px solid #ef4444;
+  color: #fca5a5;
+}
+
+.loading-section {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.loading-section h2 {
+  color: white;
+  font-size: 1.3rem;
+  margin: 0 0 10px;
+}
+
+.loading-section h3 {
+  color: white;
+  font-size: 1rem;
+  margin: 20px 0 15px;
+}
+
+.section-description {
+  color: #718096;
+  margin: 0 0 20px;
+  font-size: 0.9rem;
+}
+
+.trucks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.truck-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+  width: 100%;
+}
+
+.truck-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: #a855f7;
+}
+
+.truck-card.available {
+  border-left: 3px solid #22c55e;
+}
+
+.truck-card.loading {
+  border-left: 3px solid #f59e0b;
+}
+
+.truck-icon {
+  font-size: 2.5rem;
+}
+
+.truck-icon-small {
+  font-size: 1.5rem;
+}
+
+.truck-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.truck-reg {
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.truck-id {
+  color: #718096;
+  font-size: 0.85rem;
+}
+
+.truck-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.truck-status {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.truck-status.available {
+  background: rgba(34, 197, 94, 0.2);
+  color: #4ade80;
+}
+
+.truck-status.loading {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fbbf24;
+}
+
+.truck-capacity {
+  color: #718096;
+  font-size: 0.8rem;
+}
+
+.truck-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 12px;
+  background: rgba(168, 85, 247, 0.1);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  border-radius: 10px;
+}
+
+.selected-truck {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.truck-capacity-badge {
+  color: #a0aec0;
+  font-size: 0.85rem;
+}
+
+.no-orders {
+  text-align: center;
+  padding: 40px 20px;
+  color: #718096;
+}
+
+.no-orders-icon {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.order-card.selectable {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+  width: 100%;
+}
+
+.order-card.selectable:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.order-card.selectable.selected {
+  border-color: #a855f7;
+  background: rgba(168, 85, 247, 0.1);
+}
+
+.order-checkbox {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #4a5568;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a855f7;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.order-card.selected .order-checkbox {
+  background: #a855f7;
+  border-color: #a855f7;
+  color: white;
+}
+
+.order-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-id {
+  color: white;
+  font-weight: 600;
+}
+
+.order-items {
+  color: #a0aec0;
+  font-size: 0.85rem;
+}
+
+.order-customer {
+  color: white;
+  font-weight: 500;
+}
+
+.order-address {
+  color: #718096;
+  font-size: 0.85rem;
+}
+
+.load-summary {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.summary-label {
+  color: #718096;
+}
+
+.summary-value {
+  color: white;
+  font-weight: 600;
+}
+
+.primary-button {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #a855f7 0%, #c084fc 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-bottom: 10px;
+}
+
+.primary-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(168, 85, 247, 0.4);
+}
+
+.primary-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.secondary-button {
+  width: 100%;
+  padding: 14px;
+  background: transparent;
+  color: #a0aec0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.secondary-button:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+}
+
+.loading-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.truck-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(168, 85, 247, 0.2);
+  border: 1px solid #a855f7;
+  border-radius: 8px;
+}
+
+.badge-icon {
+  font-size: 1.2rem;
+}
+
+.badge-text {
+  color: white;
+  font-weight: 600;
+}
+
+.loading-progress {
+  color: #a0aec0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.progress-bar {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.progress-bar.large {
+  height: 10px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #a855f7, #c084fc);
+  border-radius: 3px;
+  transition: width 0.3s;
+}
+
+.current-order-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+}
+
+.order-for {
+  color: #718096;
+}
+
+.order-id-small {
+  color: #718096;
+}
+
+.load-card {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.load-item-info {
+  margin-bottom: 25px;
+}
+
+.load-icon {
+  font-size: 4rem;
+  margin-bottom: 15px;
+}
+
+.load-item-info h3 {
+  color: white;
+  margin: 0 0 8px;
+}
+
+.load-sku {
+  color: #c084fc;
+  font-family: monospace;
+  margin: 0 0 4px;
+}
+
+.load-size {
+  color: #718096;
+  margin: 0;
+}
+
+.load-counter {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 5px;
+}
+
+.loaded-count {
+  color: #a855f7;
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+
+.load-divider {
+  color: #4a5568;
+  font-size: 2rem;
+}
+
+.required-count {
+  color: white;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.load-remaining {
+  color: #718096;
+  margin: 0;
+}
+
+.loading-nav {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.nav-btn {
+  flex: 1;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.nav-btn.prev {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.nav-btn.prev:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.nav-btn.next {
+  background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+  color: white;
+}
+
+.nav-btn.next:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.complete-section {
+  text-align: center;
+}
+
+.success-icon {
+  font-size: 5rem;
+  margin-bottom: 20px;
+}
+
+.complete-section h2 {
+  color: #22c55e;
+  margin: 0 0 8px;
+}
+
+.complete-section > p {
+  color: #a0aec0;
+  margin: 0 0 30px;
+}
+
+.complete-summary {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.truck-summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 15px;
+  color: white;
+  font-weight: 600;
+}
+
+.order-summary {
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.order-summary:last-child {
+  border-bottom: none;
+}
+
+.order-header-summary {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.order-header-summary .order-id {
+  color: #a855f7;
+}
+
+.order-header-summary .customer-name {
+  color: #a0aec0;
+  font-size: 0.9rem;
+}
+
+.items-loaded {
+  padding-left: 10px;
+}
+
+.loaded-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+  color: #a0aec0;
+  font-size: 0.9rem;
+}
+
+.loaded-qty {
+  color: #22c55e;
+  font-weight: 600;
+}

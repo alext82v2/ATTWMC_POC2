@@ -1,0 +1,126 @@
+.location-page {
+  min-height: 100vh;
+  padding: 20px;
+  background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 100%);
+}
+
+.location-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.location-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.location-header h1 {
+  color: white;
+  font-size: 1.5rem;
+  margin: 0 0 10px;
+}
+
+.location-header p {
+  color: #718096;
+  margin: 0;
+}
+
+.error-message {
+  background: rgba(239, 68, 68, 0.2);
+  border: 1px solid #ef4444;
+  color: #fca5a5;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.scan-section {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.locations-list h3 {
+  color: white;
+  font-size: 1.1rem;
+  margin: 0 0 15px;
+  padding-left: 10px;
+}
+
+.location-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.location-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid transparent;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+}
+
+.location-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(5px);
+}
+
+.location-card.receiving {
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.location-card.receiving:hover {
+  border-color: #3b82f6;
+}
+
+.location-card.storage {
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+.location-card.storage:hover {
+  border-color: #22c55e;
+}
+
+.location-card.dispatch {
+  border-color: rgba(249, 115, 22, 0.3);
+}
+
+.location-card.dispatch:hover {
+  border-color: #f97316;
+}
+
+.location-card.loading {
+  border-color: rgba(168, 85, 247, 0.3);
+}
+
+.location-card.loading:hover {
+  border-color: #a855f7;
+}
+
+.location-icon {
+  font-size: 2rem;
+}
+
+.location-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.location-name {
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.location-id {
+  color: #718096;
+  font-size: 0.85rem;
+}
